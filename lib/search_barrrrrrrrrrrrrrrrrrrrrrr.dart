@@ -14,7 +14,6 @@ class MySearchBar extends StatefulWidget {
 class _MySearchBarState extends State<MySearchBar> {
   final List<String> _results = [];
   String noAnime = 'no Anime';
-  final List<String> _noAnime = [];
 
   void _handleSearch(String input) {
     _results.clear();

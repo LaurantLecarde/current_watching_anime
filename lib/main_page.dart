@@ -10,6 +10,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'bottom_navigation_bar_sc/favourite.dart';
 import 'bottom_navigation_bar_sc/finished.dart';
+import 'drawer_scrn/manga_screen.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -57,6 +58,7 @@ class _MainPageState extends State<MainPage> {
               Container(height: 70,padding:const EdgeInsets.all(1),color: Colors.black,child: Card(elevation: 0,child: Center(child: ListTile(title: Text('TV Movies',style: optionStyle,),trailing: myIcon,onTap: (){Navigator.of(context).push(CupertinoPageRoute(builder: (context)=> const TvMovies()));},)),),),
               Container(height: 70,padding:const EdgeInsets.all(1),color: Colors.black,child: Card(elevation: 0,child: Center(child: ListTile(title: Text('Miraculous "Tales of Ladybug and Chat Noire"',style: optionStyle,),trailing: myIcon,onTap: (){Navigator.of(context).push(CupertinoPageRoute(builder: (context)=> const MiraculousPage()));},)),),),
               Container(height: 70,padding:const EdgeInsets.all(1),color: Colors.black,child: Card(elevation: 0,child: Center(child: ListTile(title: Text('Upcoming, Ongoing',style: optionStyle,),trailing: myIcon,onTap: (){Navigator.of(context).push(CupertinoPageRoute(builder: (context)=> const UpComingOnGoing()));},)),),),
+              Container(height: 70,padding:const EdgeInsets.all(1),color: Colors.black,child: Card(elevation: 0,child: Center(child: ListTile(title: Text('Mangas',style: optionStyle,),trailing: myIcon,onTap: (){Navigator.of(context).push(CupertinoPageRoute(builder: (context)=> const MangaScreen()));},)),),),
             ],
           ),
         ),
