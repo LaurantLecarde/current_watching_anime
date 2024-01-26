@@ -11,6 +11,14 @@ class AllAnime {
 }
 
 final allAnimeListRow = [
+  AllAnime(unLiked: true, name: "Worlds end harem", episodes: "12", image: "assets/picture/img_13.png"),
+  AllAnime(unLiked: true, name: "So I Can't play H", episodes: "12", image: "assets/picture/img_12.png"),
+  AllAnime(unLiked: true, name: "Absolute Duo", episodes: "12", image: "assets/picture/img_11.png"),
+  AllAnime(unLiked: true, name: "Jujutsu Kaisen TV", episodes: "2", image: "assets/picture/img_10.png"),
+  AllAnime(unLiked: false, name: "Darling in th franxx", episodes: "24", image: "assets/picture/img_9.png"),
+  AllAnime(unLiked: true, name: "Jujutsu Kaisen S2", episodes: "23", image: "assets/picture/img_8.png"),
+  AllAnime(unLiked: true, name: "Jujutsu Kaisen S1", episodes: "24", image: "assets/picture/img_7.png"),
+  AllAnime(unLiked: false, name: "Chainsaw Man", episodes: "12", image: "assets/picture/img_6.png"),
   AllAnime(unLiked: true, name: "Rascal does not dream of Knapsack girl", episodes: "Future", image: "assets/picture/img_5.png"),
   AllAnime(unLiked: true, name: "Rascal does not dream sister venturing out", episodes: 'Full', image: "assets/picture/img_4.png"),
   AllAnime(unLiked: true, name: "Rent a Girlfriend S3", episodes: "12", image:"assets/picture/img_3.png"),
@@ -129,5 +137,5 @@ final allAnimeListRow = [
   AllAnime(unLiked:true,name: 'Yamada-kun And The Seven Witches', episodes: '12', image: 'assetses/img/img_28.png'),
   AllAnime(unLiked:true,name: 'Loving Yamada-Kun at 999lvl', episodes: '13', image: 'assetses/img/img_29.png'),
   AllAnime(unLiked:true,name: 'Your Name', episodes: 'Full', image: 'assetses/img/img_30.png'),
-  AllAnime(unLiked:true,name: 'Zom 100 The Bucket List Of Dead', episodes: 'Ongoing', image: 'assetses/img/img_31.png'),
+  AllAnime(unLiked:true,name: 'Zom 100 The Bucket List Of Dead S1', episodes: '12', image: 'assetses/img/img_31.png'),
 ];

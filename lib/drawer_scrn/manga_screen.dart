@@ -11,7 +11,7 @@ class _MangaScreenState extends State<MangaScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      
     );
   }
 }

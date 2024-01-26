@@ -8,5 +8,6 @@ class WatchingNow {
 }
 
 final watchingNowList = [
-  WatchingNow(unLiked: true, name: "Rent a Girlfriend S2", episodes: "12", image:"assets/picture/img_2.png"),
+  WatchingNow(unLiked:true,name: 'My Little Monster', episodes: '13', image: 'assets/img/img_81.png'),
+  WatchingNow(unLiked: true, name: "Jujutsu Kaisen S1", episodes: "24", image: "assets/picture/img_7.png"),
 ];
