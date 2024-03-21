@@ -1,5 +1,8 @@
 import 'package:current_watching_anime/model/favourite_animes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
 
 class Favourite extends StatefulWidget {
   const Favourite({super.key});
@@ -75,6 +78,10 @@ class _FavouriteState extends State<Favourite> {
                             ),
                           )),
                       Positioned(
+                          child: IconButton(onPressed: (){
+                            downloadImage(data.image);
+                          }, icon :Icon(Icons.download,color:CupertinoColors.activeGreen))),
+                      Positioned(
                           bottom: 0,
                           child: SizedBox(
                             height: 100,
@@ -96,7 +103,9 @@ class _FavouriteState extends State<Favourite> {
                                   child: Center(
                                       child: Column(
                                         children: [
-                                          Text(data.name),
+                                          SizedBox(
+                                              width: 150,
+                                              child: Text(data.name)),
                                           const SizedBox(
                                             height: 5,
                                           ),
@@ -114,5 +123,29 @@ class _FavouriteState extends State<Favourite> {
         },
       ),
     );
+  }
+  Future<void> downloadImage(String imagePath) async {
+    try {
+      ByteData data = await rootBundle.load(imagePath);
+      List<int> bytes = data.buffer.asUint8List();
+
+      final result = await ImageGallerySaver.saveImage(Uint8List.fromList(bytes));
+
+      if (result['isSuccess']) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Image downloaded successfully!'),
+          ),
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Failed to download image.'),
+          ),
+        );
+      }
+    } catch (e) {
+      print('Error downloading image: $e');
+    }
   }
 }

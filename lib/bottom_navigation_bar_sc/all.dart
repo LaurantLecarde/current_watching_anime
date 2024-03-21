@@ -1,7 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-
+import 'package:flutter/services.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:image_picker/image_picker.dart';
 import '../model/all_anime.dart';
+
 
 class All extends StatefulWidget {
   const All({super.key});
@@ -12,9 +15,7 @@ class All extends StatefulWidget {
 
 class _AllState extends State<All> {
   TextStyle optionalStyle = const TextStyle(color: Colors.white, fontSize: 20);
-  final _anime = AllAnime;
   final List _animeList = [];
-  String _noAnime = "No Anime";
 
   void _handleSearch(String input) {
     _animeList.clear();
@@ -26,6 +27,7 @@ class _AllState extends State<All> {
       }
     }
   }
+  ImagePicker _picker = ImagePicker();
 
 
   @override
@@ -57,7 +59,8 @@ class _AllState extends State<All> {
               crossAxisCount: 2),
           itemCount: allAnimeListRow.length,
           itemBuilder: (BuildContext context, index) {
-            AllAnime data = allAnimeListRow[index];
+            allAnimeListRow.shuffle();
+            var data = allAnimeListRow[index];
             return SizedBox(
               height: 300,
               width: 200,
@@ -98,6 +101,10 @@ class _AllState extends State<All> {
                               ),
                             )),
                         Positioned(
+                            child: IconButton(onPressed: (){
+                              downloadImage(data.image);
+                            }, icon :Icon(Icons.download,color:CupertinoColors.activeGreen))),
+                        Positioned(
                             bottom: 0,
                             child: SizedBox(
                               height: 100,
@@ -122,7 +129,9 @@ class _AllState extends State<All> {
                                           crossAxisAlignment:
                                           CrossAxisAlignment.center,
                                           children: [
-                                            Text(data.name),
+                                            SizedBox(
+                                                width: 150,
+                                                child: Text(data.name)),
                                             const SizedBox(
                                               height: 5,
                                             ),
@@ -229,5 +238,29 @@ class _AllState extends State<All> {
           },
         ),
     );
+  }
+  Future<void> downloadImage(String imagePath) async {
+    try {
+      ByteData data = await rootBundle.load(imagePath);
+      List<int> bytes = data.buffer.asUint8List();
+
+      final result = await ImageGallerySaver.saveImage(Uint8List.fromList(bytes));
+
+      if (result['isSuccess']) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Image downloaded successfully!'),
+          ),
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Failed to download image.'),
+          ),
+        );
+      }
+    } catch (e) {
+      print('Error downloading image: $e');
+    }
   }
 }

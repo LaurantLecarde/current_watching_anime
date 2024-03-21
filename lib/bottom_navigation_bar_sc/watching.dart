@@ -17,22 +17,22 @@ class _WatchingState extends State<Watching> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  Container(
+        title: Container(
           width: double.infinity,
           height: 50,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
-              border: Border.all(
-                  color: Colors.blue,
-                  width: 2
-              )
-          ),
-          child:  Center(child: Text('Watching Animes : ${watchingNowList.length}',style: TextStyle(fontSize: 25,color: Colors.grey),)),
+              border: Border.all(color: Colors.blue, width: 2)),
+          child: Center(
+              child: Text(
+            'Watching Animes : ${watchingNowList.length}',
+            style: TextStyle(fontSize: 25, color: Colors.grey),
+          )),
         ),
       ),
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            childAspectRatio: 1/1.5,
+            childAspectRatio: 1 / 1.5,
             crossAxisSpacing: 5,
             mainAxisSpacing: 5,
             crossAxisCount: 2),
@@ -69,15 +69,15 @@ class _WatchingState extends State<Watching> {
                             },
                             icon: data.unLiked
                                 ? const Icon(
-                              Icons.favorite_outline,
-                              color: Colors.red,
-                              size: 30,
-                            )
+                                    Icons.favorite_outline,
+                                    color: Colors.red,
+                                    size: 30,
+                                  )
                                 : const Icon(
-                              Icons.favorite,
-                              color: Colors.red,
-                              size: 30,
-                            ),
+                                    Icons.favorite,
+                                    color: Colors.red,
+                                    size: 30,
+                                  ),
                           )),
                       Positioned(
                           bottom: 0,
@@ -90,25 +90,27 @@ class _WatchingState extends State<Watching> {
                                         begin: Alignment.bottomCenter,
                                         end: Alignment.topCenter,
                                         colors: [
-                                          Colors.black87,
-                                          Colors.black54,
-                                          Colors.black54,
-                                          Colors.black38,
-                                          Colors.black12
-                                        ])),
+                                      Colors.black87,
+                                      Colors.black54,
+                                      Colors.black54,
+                                      Colors.black38,
+                                      Colors.black12
+                                    ])),
                                 child: SingleChildScrollView(
                                   child: Center(
                                       child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        children: [
-                                          Text(data.name),
-                                          const SizedBox(
-                                            height: 5,
-                                          ),
-                                          Text('Episodes:${data.episodes}')
-                                        ],
-                                      )),
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      SizedBox(
+                                          width: 150, child: Text(data.name)),
+                                      const SizedBox(
+                                        height: 5,
+                                      ),
+                                      Text('Episodes:${data.episodes}')
+                                    ],
+                                  )),
                                 )),
                           ))
                     ],

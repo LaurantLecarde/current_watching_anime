@@ -1,5 +1,3 @@
-import 'package:current_watching_anime/bottom_navigation_bar_sc/all.dart';
-
 class AllAnime {
   String name;
   String episodes;
@@ -11,6 +9,16 @@ class AllAnime {
 }
 
 final allAnimeListRow = [
+  AllAnime(unLiked: true, name: "Bottom-Tier Character Specials", episodes: "2", image: "assets/picture/img_23.png"),
+  AllAnime(unLiked: true, name: "The Wrong Way To Use Magic", episodes: "12", image: "assets/picture/img_22.png"),
+  AllAnime(unLiked: true, name: "My First Girlfriend is a Gal", episodes: "12", image: "assets/picture/img_21.png"),
+  AllAnime(unLiked: true, name: "Bottom-Tier Character Season 2", episodes: "12", image: "assets/picture/img_20.png"),
+  AllAnime(unLiked: true, name: "Bottom-Tier Character Season 1", episodes: "12", image: "assets/picture/img_19.png"),
+  AllAnime(unLiked: true, name: "Chivalry Of A Failed Knight", episodes: "12", image: "assets/picture/img_18.png"),
+  AllAnime(unLiked: true, name: "Hokkaido Gals Are Super Adorable", episodes: "12", image: "assets/picture/img_17.png"),
+  AllAnime(unLiked: true, name: "The Foolish Angel Dances With The Devil", episodes: "12", image: "assets/picture/img_16.png"),
+  AllAnime(unLiked: true, name: "Yosuga No Sora", episodes: "12", image: "assets/picture/img_15.png"),
+  AllAnime(unLiked: true, name: "Redo of healers", episodes: "12", image: "assets/picture/img_14.png"),
   AllAnime(unLiked: true, name: "Worlds end harem", episodes: "12", image: "assets/picture/img_13.png"),
   AllAnime(unLiked: true, name: "So I Can't play H", episodes: "12", image: "assets/picture/img_12.png"),
   AllAnime(unLiked: true, name: "Absolute Duo", episodes: "12", image: "assets/picture/img_11.png"),
@@ -110,8 +118,7 @@ final allAnimeListRow = [
   AllAnime(unLiked:true,name: 'My Teen romantic Comedy Is Wrong As I expected S2', episodes: '13', image: 'assets/img/img_88.png'),
   AllAnime(unLiked:true,name: 'My Teen romantic Comedy Is Wrong As I expected S3', episodes: '12', image: 'assets/img/img_89.png'),
   AllAnime(unLiked:true,name: 'My Teen romantic Comedy Is Wrong As I expected Movie', episodes: '2', image: 'assets/img/img_90.png'),
-  AllAnime(unLiked:true,name: 'Myriad Colors Phantom World', episodes: '13', image: 'assets/img/img_91.png'),
-  AllAnime(unLiked:true,name: 'Myriad Colors Phantom World', episodes: 'Full', image: 'assets/img/img_92.png'),
+  AllAnime(unLiked:true,name: 'Myriad Colors Phantom World', episodes: '13', image: 'assets/img/img_93.png'),
   AllAnime(unLiked:true,name: 'OniAi S1', episodes: '12', image: 'assets/img/img_97.png'),
   AllAnime(unLiked:true,name: 'OniAi S2', episodes: '6', image: 'assets/img/img_98.png'),
   AllAnime(unLiked:true,name: 'Oreshura', episodes: '13', image: 'assets/img/img_99.png'),

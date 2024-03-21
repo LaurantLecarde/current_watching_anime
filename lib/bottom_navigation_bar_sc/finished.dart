@@ -96,7 +96,9 @@ class _FinishedState extends State<Finished> {
                                   child: Center(
                                       child: Column(
                                         children: [
-                                          Text(data.name),
+                                          SizedBox(
+                                              width: 150,
+                                              child: Text(data.name)),
                                           const SizedBox(
                                             height: 5,
                                           ),
